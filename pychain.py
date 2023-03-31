@@ -182,16 +182,17 @@ if st.button("Add Block"):
     prev_block = pychain.chain[-1]
     prev_block_hash = prev_block.hash_block()
 
-    # @TODO
     # Update `new_block` so that `Block` consists of an attribute named `record`
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
 
+    # Creating the record object
     record = Record(sender = sender, 
         receiver = receiver,  
         amount = amount 
     )
 
+    # Adding the record created to the new block
     new_block = Block(
         record=record,
         creator_id=42,
